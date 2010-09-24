@@ -1,0 +1,11 @@
+Elegant Object
+
+Directions:
+- Edit the script to your liking:
+  - change <br> to <br /> for xhtml
+  - change the colors if you want
+  - change the indent chars
+  - remove the spans if you don't like them
+- Include the script
+- run elegantObject(object [, htmlElement ])
+  - returns the markup text if you want to do something else with it.
