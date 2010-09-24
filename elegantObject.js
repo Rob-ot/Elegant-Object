@@ -1,3 +1,13 @@
+/*
+ * Elegant Object
+ * http://github.com/Rob-ot/Elegant-Object
+ * 
+ * Copyright 2010, Rob Middleton
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * 
+ * Date: 9/24/10
+ */
+
 var elegantObject = (function () {
   var data,
     indent = 0,
