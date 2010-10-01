@@ -31,7 +31,7 @@ var elegantObject = (function () {
         if (obj === null) {
           span("null", "reserved");
         }
-        else if (obj.length !== undefined) {
+        else if (obj instanceof Array) {
           handle.array(obj);
         }
         else {
@@ -66,12 +66,11 @@ var elegantObject = (function () {
         var funcStr = String(func)
           .replace(/\n/g, " ")
           .replace(/\ +/g, " ");
-        data += (funcStr.length > 60) ?
-          funcStr.substr(0, 56) + "... " : funcStr;
+        data += (funcStr.length > 60) ? funcStr.substr(0, 56) + "..." : funcStr;
       },
       "number": function (num) {
-        if (isNaN(num)) {
-          span("NaN", "reserved");
+        if (isNaN(num) || ! isFinite(num)) {
+          span(num, "reserved");
         }
         else {
           span(num, "number");
@@ -81,7 +80,7 @@ var elegantObject = (function () {
         span("\"" + str.replace(/\"/g, "\\\"") + "\"", "string");
       },
       "boolean": function (bool) {
-        span((bool ? "true" : "false"), "reserved");
+        span(bool, "reserved");
       },
       "undefined": function () {
         span("undefined", "reserved");
